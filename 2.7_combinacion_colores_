@@ -1,0 +1,65 @@
+Proceso combinacion_colores
+	
+	
+	// objetivo del algoritmo
+	Escribir sin saltar " Diseñe un algoritmo que muestre en pantalla un menu: amarillo = 1, azul = 2, rojo = 3";
+	Escribir sin saltar " Luego solicite al usuario digitar dos de estos numeros para descifrar ";
+	Escribir Sin Saltar " El resultado mostrado en pantalla (su combinacion es naranja), (su combinacion es verde), ( su combinacion es morado) ";
+	Escribir sin saltar " mismo numero dos veces y los otros numeros fuera del rango ";
+	
+	
+	//Declarar variables 
+	Definir  volver Como Caracter;
+	Definir color1, color2 como entero;
+	Definir resultado como cadena;
+	
+	//iniciar variables
+	volver <- ' R ';
+	color1 <- 0 ;
+	color2 <- 0 ;
+	resultado  <-"";
+	
+	//Entrada de datos
+	Repetir
+		
+	
+	Escribir "";
+	Escribir "------MENU------ ";
+	Escribir " 1 amarillo";
+	Escribir " 2 azul ";
+	Escribir " 3 rojo ";
+	Escribir "";
+	Escribir Sin Saltar " Seleccione el primer numero de color ";
+	Leer color1;
+	Escribir sin saltar " Seleccione el segundo numero de color ";
+	Leer color2;
+	// Proceso1 " se valida si los colores se muestran en el menu ( 1, 2 o 3).
+	
+	//           Si no, muestra en pantalla un error 
+	
+	Si ((color1<=3 y color1>0) y (color2<=3 y color2>0)) Entonces               
+		Escribir "Los colores Si existen";
+	SiNo
+		Escribir "mismo numero dos veces o numeros fuera del rango";
+	FinSi
+	
+	// Proceso 2 si los colores existen cual es el resultado de la combinación
+	si (color1 = color2 ) Entonces
+		Escribir "el color es el mismo";
+	FinSi
+		Si (color1 = 1 y color2 = 2  o color1 = 2 y color2 = 1) Entonces
+			resultado = "Verde";
+		FinSi
+		Si (color1 = 3 y color2 = 2  o color1 = 2 y color2 = 3) Entonces
+			Escribir " combinación igual a morado";
+		FinSi
+		Si (color1 = 3  y color2 = 1 o color1 = 1 y color2 = 3) Entonces
+			Escribir " combinación igual a naranja ";
+		FinSi
+		
+		//Salida
+	Escribir Sin Saltar "Para repetir digite < R >, para salir cualquier tecla:";
+		Leer volver;
+    Hasta Que (volver <> 'R')	
+
+FinProceso

@@ -1,0 +1,177 @@
+Algoritmo  calculadora
+	// Objetivo Algoritmo 
+	Escribir Sin Saltar "Diseñe un programa para seleccionar una operacion de matematicas basicas";
+	Escribir Sin Saltar "matematicas basicas: suma, resta, multiplicacaion, division";
+	Escribir  Sin Saltar "modulo, cuadrado, raiz cuadrada, potencia, porcentaje, mumero aliatorio";
+	// Declarar variables
+	Definir volver Como Caracter;
+	Definir menu  Como Entero;
+	Definir num1, num2, res, resultado, absoluto Como Real; 
+	// Iniciar variables
+	volver <- 'R';
+	menu <- 0;
+	num1 <-0.0;
+	num2 <- 0.0;
+	resultado <- 0.0;
+	res <- 0.0;
+	absoluto <- 0.0;
+	//Entrada de datos: Muestra el Menu en pantalla
+	Repetir
+		
+	
+	Escribir  "";
+	Escribir "--------------------------------Bienvenido a la calculadora---------------------------";
+	Escribir "1. suma";
+	Escribir "2. resta";
+	Escribir "3. multiplicacion";
+	Escribir "4. division";
+	Escribir "5. modulo";
+	Escribir "6. cuadrado";
+	Escribir "7. raiz cuadrada";
+	Escribir "8. potencia";
+	Escribir "9. porcentaje";
+	Escribir "10. numero aleatorio";
+	Escribir Sin Saltar "Digite una opción del menu ";
+	Leer menu;
+	
+	
+	
+	
+	Segun menu Hacer
+			
+		1:
+			//Entrada de datos
+			Escribir "";
+			Escribir "-------------Bienvenido a la suma------------------";
+			Escribir Sin Saltar " Digite el primer sumando";
+			Leer  num1;
+			Escribir Sin Saltar " Digite el segundo sumando";
+			Leer  num2;
+			//Proceso2: suma
+			res <- num1 + num2;
+			//salida de datos
+			Escribir  "";
+			Escribir "El resultado de la suma es", res;
+		2:
+			//Entrada de datos
+			Escribir "";
+			Escribir "-------------Bienvenido a la resta------------------";
+			Escribir Sin Saltar " Digite el primer restando";
+			Leer  num1;
+			Escribir Sin Saltar " Digite el segundo restando";
+			Leer  num2;
+			//Proceso:3 resta
+			res <- num1 - num2;
+			//salida de datos
+			Escribir  "";
+			Escribir "El resultado de la resta es", res;
+			
+		3:
+			//Entrada de datos
+			Escribir "";
+			Escribir "-------------Bienvenido a la multiplicacion------------------";
+			Escribir Sin Saltar " Digite el pirmer multiplicando";
+			Leer  num1;
+			Escribir Sin Saltar " Digite el segundo multiplicando";
+			Leer  num2;
+			//Proceso:3 multiplicacion
+			res <- num1 * num2;
+			//salida de datos
+			Escribir  "";
+			Escribir "El resultado de la multiplicacion  es", res;
+			
+		4:
+			//Entrada de datos
+			Escribir "";
+			Escribir "-------------Bienvenido a la division------------------";
+			Escribir Sin Saltar " Digite el pirmer divisor";
+			Leer  num1;
+			Escribir Sin Saltar " Digite el segundo divisor";
+			Leer  num2;
+			//Proceso:4division
+			res <- num1 / num2;
+			//salida de datos
+			Escribir  "";
+			Escribir "El resultado de la division  es", res;
+			
+		5:
+			//Entrada de datos
+			Escribir "";
+			Escribir "-------------Bienvenido a modulo----------";
+			Escribir Sin Saltar " Digite el número modulo";
+			Leer  num1;
+			//Proceso : 5modulo
+			Si num1 >= 0 Entonces
+				absoluto <- num1;
+			SiNo
+				absoluto <- num1 * (-1);
+				Escribir "El valor de absoluto es:",absoluto;
+			FinSi
+			
+		6: 
+			//Entrada de datos
+			Escribir "";
+			Escribir "-------------Bienvenido al cuadrado----------";
+			Escribir Sin Saltar " Digite el número cuadrado ";
+			Leer  num1;
+			//Proceso : 6cuadrado
+			res <- num1 * num1;
+			Escribir  "";
+			Escribir "El resultado del cuadrado  es ", res;
+			
+		7:  //Entrada de datos
+			Escribir "";
+			Escribir "-------------Bienvenido a la raiz cuadrada----------";
+			Escribir Sin Saltar " Digite el número positivo al que quiere sacar raiz cuadrada ";
+			Leer  num1;
+			//Proceso : 7raiz cuadrada
+			Si num1 >= 0 Entonces
+				res <- raiz(num1);
+				Escribir "El resultado de la raiz cuadrada  es ", res;
+			SiNo
+				Escribir "la raiz cuadrada no existe ";
+			FinSi
+			
+		8:   //Entrada de datos
+			Escribir "";
+			Escribir "-------------Bienvenido a potencia----------";
+			Escribir Sin Saltar " Digite la base de la potencia";
+			Leer  num1;
+			Escribir Sin Saltar " Digite el exponente de la potenica ";
+			Leer  num2;
+			//Proceso  : potencia
+			resultado <- num1 ^ num2;
+			Escribir "El resultado de la potencia es: ", resultado;
+			
+		9:   //Entrada de datos
+			Escribir "";
+			Escribir "-------------Bienvenido al porcentaje----------";
+			Escribir Sin Saltar " Digite el numero que quiere sacar su procentaje";
+			Leer  num1;
+			Escribir  Sin Saltar "Digite el valor de ese porcentaje";
+			Leer  num2;
+			//Proceso 
+			resultado <- (num1 * num2) / 100;
+			Escribir "El porcentaje calculado es: ", resultado;
+		    
+	    10:   //Entrada de datos
+			Escribir "";
+			Escribir "-------------Bienvenido a Número Aleatorio----------";
+			Escribir Sin Saltar "Digite el número mínimo del rango: ";
+			Leer num1;
+			Escribir Sin Saltar "Digite el número máximo del rango: ";
+			Leer num2;
+			//Proceso : aleatorio
+			resultado <- Aleatorio(num1, num2);
+			Escribir "Tu número generado al azar es: ", resultado;
+			
+			//Salida 
+			
+	FinSegun
+    Escribir Sin Saltar "Para repetir digite < R >, para salir cualquier tecla:";
+	Leer volver;
+    Hasta Que (volver <> 'R')
+   
+FinAlgoritmo
+	
+
