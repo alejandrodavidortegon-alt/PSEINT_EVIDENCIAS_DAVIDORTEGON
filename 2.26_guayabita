@@ -1,0 +1,38 @@
+Algoritmo Juego_Guayabita
+    Definir cantJugadores, acumulado, dado, apuesta, i Como Entero;
+    Escribir "Cantidad de jugadores:";
+    Leer cantJugadores;
+    acumulado <- cantJugadores; // Cada uno pone una moneda al iniciar
+    
+    Mientras acumulado > 0 Hacer
+        Para i <- 1 Hasta cantJugadores Hacer
+            Si acumulado > 0 Entonces
+                Escribir "Turno Jugador ", i, ". Acumulado: ", acumulado;
+                dado <- Azar(6) + 1;
+                Escribir "Salió: ", dado;
+                
+                Si dado == 1 O dado == 6 Entonces
+                    Escribir "¡Mala suerte! Pones una moneda.";
+                    acumulado <- acumulado + 1;
+                Sino
+                    Escribir "Puedes apostar hasta: ", acumulado, ". ¿Cuánto apuestas?";
+                    Leer apuesta;
+                    Mientras apuesta > acumulado Hacer
+                        Escribir "No puedes apostar más de lo que hay. Reintenta:";
+                        Leer apuesta;
+                    FinMientras
+                    
+                    Escribir "Lanza el segundo dado...";
+                    Si (Azar(6) + 1) > dado Entonces
+                        Escribir "¡Ganaste la apuesta!";
+                        acumulado <- acumulado - apuesta;
+                    Sino
+                        Escribir "Perdiste. La apuesta va al acumulado.";
+                        acumulado <- acumulado + apuesta;
+                    FinSi
+                FinSi
+            FinSi
+        FinPara
+    FinMientras
+    Escribir "El acumulado llegó a 0. Juego terminado.";
+FinAlgoritmo

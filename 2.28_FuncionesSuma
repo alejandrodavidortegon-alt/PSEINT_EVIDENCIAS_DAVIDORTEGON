@@ -1,0 +1,57 @@
+Algoritmo FuncionesSuma
+	Definir opcion Como Entero;
+	Definir resultado Como Entero;
+	
+	Repetir
+		Escribir "=== MENU: TIPOS DE FUNCIONES SUMA ===";
+		Escribir "1. Sin parametros y sin retorno";
+		Escribir "2. Con parametros y sin retorno";
+		Escribir "3. Sin parametros y con retorno";
+		Escribir "4. Con parametros y con retorno";
+		Escribir "0. Salir";
+		Leer opcion;
+		
+		Segun opcion Hacer
+			1:
+				SinParamSinRetorno();
+			2:
+				ConParamSinRetorno(10, 5);
+			3:
+				resultado <- SinParamConRetorno();
+				Escribir "Resultado: ", resultado;
+			4:
+				resultado <- ConParamConRetorno(8, 7);
+				Escribir "Resultado: ", resultado;
+			0:
+				Escribir "Saliendo...";
+			De Otro Modo:
+				Escribir "Opcion invalida.";
+		FinSegun
+	Hasta Que opcion == 0;
+FinAlgoritmo
+
+SubAlgoritmo SinParamSinRetorno
+	Definir a, b Como Entero;
+	Escribir "Ingrese el primer numero: ";
+	Leer a;
+	Escribir "Ingrese el segundo numero: ";
+	Leer b;
+	Escribir "La suma es: ", a + b;
+FinSubAlgoritmo
+
+SubAlgoritmo ConParamSinRetorno(a, b)
+	Escribir "La suma de ", a, " + ", b, " = ", a + b;
+FinSubAlgoritmo
+
+SubAlgoritmo resultado <- SinParamConRetorno
+	Definir a, b Como Entero;
+	Escribir "Ingrese el primer numero: ";
+	Leer a;
+	Escribir "Ingrese el segundo numero: ";
+	Leer b;
+	resultado <- a + b;
+FinSubAlgoritmo
+
+SubAlgoritmo resultado <- ConParamConRetorno(a, b)
+	resultado <- a + b;
+FinSubAlgoritmo
